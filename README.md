@@ -1,25 +1,26 @@
-# r8125-synology
+# r8127-synology-dsm6.2
 
-This repo contains code and instructions to compile and install the RTL8125 driver for Synology DSM.
+This repo contains code and instructions to compile and install the RTL8127 driver for Synology DSM 6.
+If you are running DSM 7+, there is actually a Chinese package source  offering precompiled packages for RTL8125/8126/8127 network chipsets.
 
 My current setup:
 
-- Synology RS1219+ (avoton)
-- DSM 7.2 (Linux 3.10.108)
+- Synology DS1621+ (v1000)
+- DSM 7.2 (Linux 4.4.59+)
 - TRENDnet 2.5GBASE-T PCIe Network Adapter (TEG-25GECTX)
 
-File an issue if you run into problems on other Synology DSM versions and platforms.
+Do not file an issue if you run into problems, as this is just a note for myself to reproduce a working solution for DSM6.2.
 
 ## Compile module
 
 Steps below are based [this](https://help.synology.com/developer-guide/getting_started/prepare_environment.html) and [this](https://help.synology.com/developer-guide/compile_applications/compile_open_source_projects.html) docs.
 
-1. Create a suitable Linux environment (not your NAS!). I used a Ubuntu 22.04 LTS Docker image.
-```bash
-$ docker run --privileged -it ubuntu:22.04
-```
+1. Create a suitable Linux environment (not your NAS!). I used a Ubuntu 22.04 LTS Live USB:
+Download an image for your system architechture (again, not your NAS) and burn it with etcher
+https://releases.ubuntu.com/jammy/
+https://etcher.balena.io
 
-2. Set up environment:
+3. Set up environment:
 
 ```bash
 $ apt-get update
